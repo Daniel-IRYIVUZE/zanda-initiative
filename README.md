@@ -17,23 +17,27 @@ A modern, responsive React website for the Zanda Initiative, a social enterprise
 ### Prerequisites
 
 Make sure you have the following installed:
+
 - Node.js (version 14 or higher)
 - npm or yarn
 
 ### Installation & Running
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/Daniel-IRYIVUZE/zanda-initiative.git
    cd zanda-initiative
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start the development server**
+
    ```bash
    npm run dev
    ```
@@ -44,6 +48,7 @@ Make sure you have the following installed:
 ### Build for Production
 
 1. **Create production build**
+
    ```bash
    npm run build
    ```
@@ -69,12 +74,12 @@ Make sure you have the following installed:
 - **Styling**: Tailwind CSS
 - **Icons**: Lucide React
 - **Routing**: React Router DOM
-- **Multilingual**: Custom context implementation
 
 ## Color Palette
 
 The application uses the Zanda Initiative brand colors:
-- Primary: `#735399` (Purple)
+
+- green: `#735399` (Purple)
 - Accent: `#f5a833` (Orange/Gold)
 - Background: `#edebef` (Light gray)
 - Text: Various shades of gray
@@ -82,22 +87,26 @@ The application uses the Zanda Initiative brand colors:
 ## Key Functionalities
 
 ### Language Support
+
 - Toggle between English and Kinyarwanda
 - Language preference saved in localStorage
 - All content dynamically translated
 
 ### Donation System
+
 - Multi-step donation form
 - Mobile money integration
 - Form data saved to localStorage
 - WhatsApp integration for direct contact
 
 ### Course Videos
+
 - Interactive video library
 - Modal popups for detailed course information
 - Responsive video embeds
 
 ### Contact Forms
+
 - Contact form with data persistence
 - Multiple contact methods (email, phone, WhatsApp)
 - Form validation
@@ -113,7 +122,6 @@ The application uses the Zanda Initiative brand colors:
 ```
 src/
 ├── components/     # Reusable UI components
-├── contexts/       # React contexts (language, etc.)
 ├── pages/          # Main page components
 ├── App.jsx         # Main app component with routing
 └── main.jsx        # Application entry point
@@ -148,6 +156,7 @@ Currently, no environment variables are required. All configuration is handled i
 ## Support
 
 For technical support or questions about the Zanda Initiative:
+
 - Email: danieliryivuze4@gmail.com
 - Phone: +250 780 162 164
 - WhatsApp: +250 780 162 164
@@ -159,50 +168,52 @@ This project is developed for the Zanda Initiative. All rights reserved.
 ---
 
 **Built with Founder of Zanda Initiative - Empowering Her to Build Her Tomorrow**
-```
+
+````
 
 ## Additional Setup Instructions
 
 ### After cloning, here's exactly what to do:
 
-1. **Navigate to the project directory:**
-   ```bash
-   cd zanda-initiative
-   ```
-
-2. **Install all dependencies:**
+1. **Install all dependencies:**
    ```bash
    npm install
-   ```
-   This will install:
-   - React & React DOM
-   - React Router DOM
-   - Lucide React icons
-   - Tailwind CSS
-   - PostCSS
-   - Vite and related plugins
+````
 
-3. **Start the development server:**
+This will install:
+
+- React & React DOM
+- React Router DOM
+- Lucide React icons
+- Tailwind CSS
+- PostCSS
+- Vite and related plugins
+
+2. **Start the development server:**
+
    ```bash
    npm run dev
    ```
 
-4. **Open your browser to the provided localhost URL (usually http://localhost:5173)**
+3. **Open your browser to the provided localhost URL (usually http://localhost:5173)**
 
 ### If you encounter any issues:
 
 **Common troubleshooting steps:**
 
 1. **Clear node_modules and reinstall:**
+
    ```bash
    rm -rf node_modules package-lock.json
    npm install
    ```
 
 2. **Check Node.js version:**
+
    ```bash
    node --version
    ```
+
    Should be 14 or higher.
 
 3. **If port 5173 is busy, Vite will automatically use another port**
