@@ -153,7 +153,7 @@ const CTASection = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-pink-500/30 to-purple-500/30 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform"></div>
                 <div className="relative bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden border-2 border-white/30 shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=800"
+                    src="ID"
                     alt="Empowered woman"
                     className="w-full h-96 object-cover"
                   />
