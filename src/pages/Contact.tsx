@@ -1,5 +1,5 @@
+import { Mail, Phone, MapPin,ShoppingCart, Send, User, MessageSquare, Clock, Globe } from "lucide-react";
 import { useState } from "react";
-import { Mail, Phone, MapPin,ShoppingCart as Shopdan, Send, User, MessageSquare, Clock, Globe } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,21 +27,7 @@ const Contact = () => {
     });
   };
 
-  const ShoppingCart = (className:any, size:any ) => (
-    <svg
-      className={className}
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <circle cx="9" cy="21" r="1"></circle>
-      <circle cx="20" cy="21" r="1"></circle>
-      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-    </svg>
-  );
+ 
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -149,7 +135,7 @@ const Contact = () => {
 
                 <div className="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors">
                   <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Shopdan className="text-purple-600" size={24} />
+                    <ShoppingCart className="text-purple-600" size={24} />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Orders & Products</h3>
