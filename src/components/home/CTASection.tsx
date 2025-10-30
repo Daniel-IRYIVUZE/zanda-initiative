@@ -271,19 +271,19 @@ const CTASection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               {
-                img: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=300",
+                img: "ID",
                 name: "Grace",
               },
               {
-                img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=300",
+                img: "ID",
                 name: "Faith",
               },
               {
-                img: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=300",
+                img: "ID",
                 name: "Hope",
               },
               {
-                img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300",
+                img: "ID",
                 name: "Joy",
               },
             ].map((person, idx) => (

@@ -151,7 +151,7 @@ const Contact = () => {
               <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 text-white mb-8 shadow-xl">
                 <div className="flex items-center mb-6">
                   <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" 
+                    src="ID" 
                     alt="Founder" 
                     className="w-20 h-20 rounded-full border-4 border-white/20 mr-4"
                   />
@@ -288,7 +288,7 @@ const Contact = () => {
             <div className="bg-white rounded-2xl overflow-hidden shadow-xl">
               <div className="aspect-w-16 aspect-h-9 bg-gray-200 relative group cursor-pointer">
                 <img 
-                  src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800" 
+                  src="ID" 
                   alt="Community workshop"
                   className="w-full h-64 object-cover"
                 />
@@ -309,7 +309,7 @@ const Contact = () => {
             <div className="bg-white rounded-2xl overflow-hidden shadow-xl">
               <div className="aspect-w-16 aspect-h-9 bg-gray-200 relative group cursor-pointer">
                 <img 
-                  src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800" 
+                  src="ID" 
                   alt="Team collaboration"
                   className="w-full h-64 object-cover"
                 />
@@ -349,7 +349,7 @@ const Contact = () => {
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border-2 border-green-200">
               <div className="aspect-w-16 aspect-h-9 bg-white rounded-xl flex items-center justify-center mb-6 shadow-inner">
                 <img 
-                  src="https://images.unsplash.com/photo-1611348586804-61bf6c080437?w=800" 
+                  src="ID" 
                   alt="Kigali cityscape"
                   className="w-full h-64 object-cover rounded-xl"
                 />

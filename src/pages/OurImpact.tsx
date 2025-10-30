@@ -74,7 +74,7 @@ const OurImpact: React.FC = () => {
       name: "Daniel Iryivuze",
       role: "Founder / CEO",
       image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+        "ID",
       bio: "Visionary leader dedicated to transforming lives through education and empowerment.",
       color: "from-green-600 to-green-700",
     },
@@ -82,7 +82,7 @@ const OurImpact: React.FC = () => {
       name: "Jean Paul BUKURU",
       role: "Chief Operating Officer (COO)",
       image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
+      "ID",
       bio: "Ensuring smooth operations and program excellence across all initiatives.",
       color: "from-blue-600 to-blue-700",
     },
@@ -90,7 +90,7 @@ const OurImpact: React.FC = () => {
       name: "Chanceline Niyotugendana",
       role: "Chief Financial Officer (CFO)",
       image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+        "ID",
       bio: "Managing financial strategy and ensuring sustainable growth.",
       color: "from-purple-600 to-purple-700",
     },
@@ -98,7 +98,7 @@ const OurImpact: React.FC = () => {
       name: "Raissa Mpawenayo",
       role: "Product Manager",
       image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80",
+        "ID",
       bio: "Leading product development and quality assurance initiatives.",
       color: "from-pink-600 to-pink-700",
     },
@@ -106,7 +106,7 @@ const OurImpact: React.FC = () => {
       name: "Elvine Mugisha",
       role: "Marketing Manager",
       image:
-        "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&q=80",
+        "ID",
       bio: "Driving brand awareness and community engagement strategies.",
       color: "from-orange-600 to-orange-700",
     },
@@ -114,7 +114,7 @@ const OurImpact: React.FC = () => {
       name: "Prencia Arakaza",
       role: "Operations Coordinator",
       image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
+        "ID",
       bio: "Coordinating daily operations and student support services.",
       color: "from-teal-600 to-teal-700",
     },

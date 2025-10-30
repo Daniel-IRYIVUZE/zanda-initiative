@@ -23,14 +23,14 @@ const AboutPage: React.FC = () => {
       name: "Sandra Ngoga",
       role: "Content Curator",
       image:
-        "https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/user-female-icon.png",
+        "ID",
       description: "Expert in literature with a keen eye for hidden gems.",
     },
     {
       name: "Sonia Uwase",
       role: "Community Manager",
       image:
-        "https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/user-female-icon.png",
+        "ID",
       description: "Fostering our vibrant community of book lovers.",
     },
   ];

@@ -60,7 +60,7 @@ const OurStory: React.FC = () => {
             </div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80" 
+                src="ID" 
                 alt="Young woman learning skills" 
                 className="rounded-2xl shadow-2xl"
               />
@@ -132,7 +132,7 @@ const OurStory: React.FC = () => {
                   </div>
                 </div>
                 <img 
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" 
+                  src="ID" 
                   alt="Mission" 
                   className="w-full h-48 object-cover rounded-lg mb-6"
                 />
@@ -156,7 +156,7 @@ const OurStory: React.FC = () => {
                   </div>
                 </div>
                 <img 
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80" 
+                  src="ID" 
                   alt="Vision" 
                   className="w-full h-48 object-cover rounded-lg mb-6"
                 />
