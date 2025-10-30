@@ -1,5 +1,5 @@
 import React from "react";
-import { Target, Eye, Lightbulb, BarChart3, Heart, Users, Award, TrendingUp } from "lucide-react";
+import { Target, Eye, Lightbulb, Heart, Users, Award, TrendingUp } from "lucide-react";
 
 const OurStory: React.FC = () => {
   return (

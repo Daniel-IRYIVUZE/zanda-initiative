@@ -179,8 +179,8 @@ const OurImpact: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-green-700 text-gray-900 mb-4">
-              See Our Impact in Action
+            <h2 className="text-4xl font-bold text-green-700 mb-4">
+              See Our Impact in Action 
             </h2>
             <p className="text-xl text-gray-600">
               Real stories of transformation and hope
@@ -203,7 +203,7 @@ const OurImpact: React.FC = () => {
       {/* Goals & Metrics */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-green-700 text-center text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-green-700 text-center mb-4">
             Our Goals & Metrics
           </h2>
           <p className="text-center text-gray-600 text-lg mb-12">
@@ -240,7 +240,7 @@ const OurImpact: React.FC = () => {
       {/* Stories of Transformation */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-green-700 text-center text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-green-700 text-center mb-4">
             Stories of Transformation
           </h2>
           <p className="text-center text-gray-600 text-lg mb-12">

@@ -1,4 +1,5 @@
-import { useState } from "react";
+// src/components/GetInvolved.tsx
+import React, { useState } from "react";
 import {
   Building2,
   ShoppingCart,
@@ -10,142 +11,181 @@ import {
   CheckCircle,
   Play,
   Share2,
-  FacebookIcon,
-  InstagramIcon,
+  Facebook,
+  Instagram,
 } from "lucide-react";
 
-const GetInvolved = () => {
-  const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
-  const [selectedVideo, setSelectedVideo] = useState(null);
+type PartnershipOption = {
+  icon: React.ComponentType<any>;
+  title: string;
+  description: string;
+  contact: string;
+  image: string;
+  benefits: string[];
+};
 
-  const partnershipOptions = [
-    {
-      icon: Building2,
-      title: "Become a Corporate Sponsor",
-      description:
-        "Align your brand with a powerful cause. Sponsor a student's training or place a bulk order for uniforms and merchandise for your staff.",
-      contact: "partnerships@zandainitiative.com",
-      image:
-        "https://www.shutterstock.com/image-photo/close-two-business-people-shaking-600nw-2172227403.jpg",
-      benefits: ["Brand visibility", "CSR impact", "Tax benefits"],
-    },
-    {
-      icon: ShoppingCart,
-      title: "Place an Order",
-      description:
-        "Do you need high-quality bags, uniforms, or custom sewn products for your school, company, or hotel? Your purchase directly funds our students' education.",
-      contact: "orders@zandainitiative.com",
-      image:
-        "https://thumbs.dreamstime.com/b/order-now-cursor-icon-glossy-green-round-button-isolated-abstract-illustration-88077183.jpg",
-      benefits: ["Quality products", "Direct impact", "Custom designs"],
-    },
-    {
-      icon: Users,
-      title: "Provide Pro-Bono Services",
-      description:
-        "We welcome support from marketers, developers, and business mentors to help us grow and improve our programs.",
-      contact: "info@zandainitiative.com",
-      image:
-        "https://homenetworkofafrica.org/wp-content/uploads/2025/05/tw-pro-bono-920x576-1.webp",
-      benefits: [
-        "Skill sharing",
-        "Network building",
-        "Meaningful contribution",
-      ],
-    },
-  ];
+type ImpactStat = { number: string; label: string };
 
-  const impactStats = [
-    { number: "50+", label: "Women Annually" },
-    { number: "85%", label: "Employment Rate" },
-    { number: "100%", label: "Skills Certification" },
-    { number: "5+", label: "Partner Organizations" },
-  ];
+type Video = {
+  id: number;
+  title: string;
+  thumbnail: string;
+  url: string;
+};
 
-  const videos = [
-    {
-      id: 1,
-      title: "Meet Our Students",
-      thumbnail:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
-      url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    },
-    {
-      id: 2,
-      title: "Impact Stories",
-      thumbnail:
-        "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800&q=80",
-      url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    },
-  ];
+const partnershipOptions: PartnershipOption[] = [
+  {
+    icon: Building2,
+    title: "Become a Corporate Sponsor",
+    description:
+      "Align your brand with a powerful cause. Sponsor a student's training or place a bulk order for uniforms and merchandise for your staff.",
+    contact: "partnerships@zandainitiative.com",
+    image:
+      "https://www.shutterstock.com/image-photo/close-two-business-people-shaking-600nw-2172227403.jpg",
+    benefits: ["Brand visibility", "CSR impact", "Tax benefits"],
+  },
+  {
+    icon: ShoppingCart,
+    title: "Place an Order",
+    description:
+      "Do you need high-quality bags, uniforms, or custom sewn products for your school, company, or hotel? Your purchase directly funds our students' education.",
+    contact: "orders@zandainitiative.com",
+    image:
+      "https://thumbs.dreamstime.com/b/order-now-cursor-icon-glossy-green-round-button-isolated-abstract-illustration-88077183.jpg",
+    benefits: ["Quality products", "Direct impact", "Custom designs"],
+  },
+  {
+    icon: Users,
+    title: "Provide Pro-Bono Services",
+    description:
+      "We welcome support from marketers, developers, and business mentors to help us grow and improve our programs.",
+    contact: "info@zandainitiative.com",
+    image:
+      "https://homenetworkofafrica.org/wp-content/uploads/2025/05/tw-pro-bono-920x576-1.webp",
+    benefits: ["Skill sharing", "Network building", "Meaningful contribution"],
+  },
+];
 
-  const DonationModal = ({ isOpen, onClose }) => {
-    if (!isOpen) return null;
+const impactStats: ImpactStat[] = [
+  { number: "50+", label: "Women Annually" },
+  { number: "85%", label: "Employment Rate" },
+  { number: "100%", label: "Skills Certification" },
+  { number: "5+", label: "Partner Organizations" },
+];
 
-    return (
-      <div className="fixed inset-0 bg-black/50bg-opacity-50 z-50 flex items-center justify-center p-4">
-        <div className="bg-white rounded-2xl max-w-md w-full p-8 relative">
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl"
-          >
-            ✕
-          </button>
-          <div className="text-center">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Heart className="text-green-600" size={32} />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Make a Donation
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Your contribution helps empower young women with skills for life.
-            </p>
-            <div className="space-y-4">
-              <div className="bg-gray-50 rounded-lg p-4">
-                <p className="font-semibold text-gray-900 mb-2">
-                  Bank Transfer
-                </p>
-                <p className="text-sm text-gray-600">
-                  Account: Zanda Initiative
-                </p>
-                <p className="text-sm text-gray-600">Bank: Bank of Kigali</p>
-              </div>
-              <div className="bg-gray-50 rounded-lg p-4">
-                <p className="font-semibold text-gray-900 mb-2">Mobile Money</p>
-                <p className="text-sm text-gray-600">MTN: +250 780 162 164</p>
-              </div>
-            </div>
-            <a
-              href="mailto:info@zandainitiative.com"
-              className="mt-6 inline-flex items-center text-green-600 hover:text-green-700 font-semibold"
-            >
-              <Mail size={16} className="mr-2" />
-              Contact for more options
-            </a>
+const videos: Video[] = [
+  {
+    id: 1,
+    title: "Meet Our Students",
+    thumbnail:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
+    url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+  },
+  {
+    id: 2,
+    title: "Impact Stories",
+    thumbnail:
+      "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800&q=80",
+    url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+  },
+];
+
+/* -----------------------------
+   DonationModal component
+   ----------------------------- */
+type DonationModalProps = {
+  isOpen: boolean;
+  onClose: () => void;
+};
+
+const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div
+      className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white rounded-2xl max-w-md w-full p-8 relative"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          aria-label="Close donation modal"
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl"
+        >
+          ✕
+        </button>
+
+        <div className="text-center">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Heart className="text-green-600" size={32} />
           </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            Make a Donation
+          </h3>
+          <p className="text-gray-600 mb-6">
+            Your contribution helps empower young women with skills for life.
+          </p>
+
+          <div className="space-y-4">
+            <div className="bg-gray-50 rounded-lg p-4">
+              <p className="font-semibold text-gray-900 mb-2">Bank Transfer</p>
+              <p className="text-sm text-gray-600">Account: Zanda Initiative</p>
+              <p className="text-sm text-gray-600">Bank: Bank of Kigali</p>
+            </div>
+
+            <div className="bg-gray-50 rounded-lg p-4">
+              <p className="font-semibold text-gray-900 mb-2">Mobile Money</p>
+              <p className="text-sm text-gray-600">MTN: +250 780 162 164</p>
+            </div>
+          </div>
+
+          <a
+            href="mailto:info@zandainitiative.com"
+            className="mt-6 inline-flex items-center text-green-600 hover:text-green-700 font-semibold"
+          >
+            <Mail size={16} className="mr-2" />
+            Contact for more options
+          </a>
         </div>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
-  const VideoModal = ({ video, onClose }) => {
-    if (!video) return null;
+/* -----------------------------
+   VideoModal component
+   ----------------------------- */
+type VideoModalProps = {
+  video: Video | null;
+  onClose: () => void;
+};
 
-    return (
+const VideoModal: React.FC<VideoModalProps> = ({ video, onClose }) => {
+  if (!video) return null;
+
+  return (
+    <div
+      className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
       <div
-        className="fixed inset-0 bg-black/50bg-opacity-90 z-50 flex items-center justify-center p-4"
-        onClick={onClose}
+        className="max-w-4xl w-full relative"
+        onClick={(e) => e.stopPropagation()}
       >
-        <div className="max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 text-white hover:text-gray-300 text-2xl"
-          >
-            ✕
-          </button>
+        <button
+          onClick={onClose}
+          aria-label="Close video modal"
+          className="absolute top-4 right-4 text-white hover:text-gray-300 text-2xl z-10"
+        >
+          ✕
+        </button>
+
+        <div className="w-full aspect-video rounded-lg overflow-hidden bg-black">
           <iframe
-            className="w-full aspect-video rounded-lg"
+            className="w-full h-full"
             src={video.url}
             title={video.title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -153,8 +193,18 @@ const GetInvolved = () => {
           ></iframe>
         </div>
       </div>
-    );
-  };
+    </div>
+  );
+};
+
+/* -----------------------------
+   Main GetInvolved component
+   ----------------------------- */
+const GetInvolved: React.FC = () => {
+  const [isDonationModalOpen, setIsDonationModalOpen] = useState<boolean>(
+    false
+  );
+  const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
 
   return (
     <div className="min-h-screen bg-white">
@@ -168,19 +218,20 @@ const GetInvolved = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="inline-block mb-4 px-4 py-2 bg-white bg-opacity-20 rounded-full">
-            <span className="text-green-800 font-semibold">
-              Join Our Mission
-            </span>
+            <span className="text-green-800 font-semibold">Join Our Mission</span>
           </div>
+
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
             Be a Part of Her
             <br />
             New Beginning
           </h1>
+
           <p className="text-xl text-green-50 max-w-3xl mx-auto mb-8 leading-relaxed">
             Join our mission to empower marginalized young women and create
             lasting change in Rwanda
           </p>
+
           <div className="flex flex-wrap justify-center gap-4">
             <button
               onClick={() => setIsDonationModalOpen(true)}
@@ -193,6 +244,7 @@ const GetInvolved = () => {
                 className="ml-2 group-hover:translate-x-1 transition-transform"
               />
             </button>
+
             <a
               href="mailto:info@zandainitiative.com"
               className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-green-600 transition-all inline-flex items-center"
@@ -231,6 +283,7 @@ const GetInvolved = () => {
               Watch stories of transformation and hope from our community
             </p>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {videos.map((video) => (
               <div
@@ -243,19 +296,15 @@ const GetInvolved = () => {
                   alt={video.title}
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-black/50bg-opacity-40 group-hover:bg-opacity-30 transition-all flex items-center justify-center">
+
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center transition-all">
                   <div className="w-16 h-16 bg-white bg-opacity-90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Play
-                      className="text-green-600 ml-1"
-                      size={28}
-                      fill="currentColor"
-                    />
+                    <Play className="text-green-600 ml-1" size={28} />
                   </div>
                 </div>
+
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent">
-                  <h3 className="text-white font-bold text-xl">
-                    {video.title}
-                  </h3>
+                  <h3 className="text-white font-bold text-xl">{video.title}</h3>
                 </div>
               </div>
             ))}
@@ -275,60 +324,67 @@ const GetInvolved = () => {
               of change-makers
             </p>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {partnershipOptions.map((option, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={option.image}
-                    alt={option.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-                  <div className="absolute bottom-4 left-4">
-                    <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-                      <option.icon className="text-white" size={24} />
+            {partnershipOptions.map((option, index) => {
+              const Icon = option.icon;
+              return (
+                <div
+                  key={index}
+                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={option.image}
+                      alt={option.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                    <div className="absolute bottom-4 left-4">
+                      <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+                        <Icon className="text-white" size={24} />
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    {option.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    {option.description}
-                  </p>
-                  <div className="mb-4 space-y-2">
-                    {option.benefits.map((benefit, idx) => (
-                      <div
-                        key={idx}
-                        className="flex items-center text-sm text-gray-700"
-                      >
-                        <CheckCircle
-                          size={16}
-                          className="text-green-600 mr-2 flex-shrink-0"
-                        />
-                        <span>{benefit}</span>
-                      </div>
-                    ))}
+
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      {option.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 leading-relaxed">
+                      {option.description}
+                    </p>
+
+                    <div className="mb-4 space-y-2">
+                      {option.benefits.map((benefit, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-center text-sm text-gray-700"
+                        >
+                          <CheckCircle
+                            size={16}
+                            className="text-green-600 mr-2 flex-shrink-0"
+                          />
+                          <span>{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <a
+                      href={`mailto:${option.contact}`}
+                      className="inline-flex items-center text-green-600 hover:text-green-700 font-semibold group"
+                    >
+                      <Mail size={16} className="mr-2" />
+                      Contact Us
+                      <ArrowRight
+                        size={16}
+                        className="ml-1 group-hover:translate-x-1 transition-transform"
+                      />
+                    </a>
                   </div>
-                  <a
-                    href={`mailto:${option.contact}`}
-                    className="inline-flex items-center text-green-600 hover:text-green-700 font-semibold group"
-                  >
-                    <Mail size={16} className="mr-2" />
-                    Contact Us
-                    <ArrowRight
-                      size={16}
-                      className="ml-1 group-hover:translate-x-1 transition-transform"
-                    />
-                  </a>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -345,23 +401,23 @@ const GetInvolved = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-green-900 to-transparent opacity-40"></div>
             </div>
+
             <div>
               <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
                 <Heart className="text-green-600" size={32} />
               </div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Make a Donation
-              </h2>
+
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">Make a Donation</h2>
+
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                 Your financial contribution directly fuels our mission. The
                 8,500,000 RWF grant we are seeking will allow us to scale our
                 impact, rent a proper workshop, purchase equipment, and launch
                 our digital platform to serve over 50 women annually.
               </p>
+
               <div className="bg-green-50 rounded-xl p-6 mb-8">
-                <h4 className="font-bold text-gray-900 mb-3">
-                  Your donation helps provide:
-                </h4>
+                <h4 className="font-bold text-gray-900 mb-3">Your donation helps provide:</h4>
                 <ul className="space-y-2">
                   {[
                     "Professional training for marginalized women",
@@ -379,6 +435,7 @@ const GetInvolved = () => {
                   ))}
                 </ul>
               </div>
+
               <button
                 onClick={() => setIsDonationModalOpen(true)}
                 className="bg-green-600 text-white px-8 py-4 rounded-full font-bold hover:bg-green-700 transition-all shadow-lg hover:shadow-xl inline-flex items-center group"
@@ -401,6 +458,7 @@ const GetInvolved = () => {
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-800 rounded-full translate-x-1/2 translate-y-1/2"></div>
         </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <Share2 size={48} className="mx-auto mb-6 opacity-90" />
           <h2 className="text-4xl font-bold mb-6">Spread the Word</h2>
@@ -408,6 +466,7 @@ const GetInvolved = () => {
             Follow us on social media, share our story, and help us break the
             stigma. Awareness is the first step toward change.
           </p>
+
           <div className="flex justify-center space-x-6 mb-10">
             <a
               href="https://facebook.com"
@@ -415,16 +474,18 @@ const GetInvolved = () => {
               rel="noopener noreferrer"
               className="w-14 h-14 bg-white bg-opacity-20 backdrop-blur rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all transform hover:scale-110"
             >
-              <span className="text-green-800 text-2xl font-bold"><FacebookIcon /></span>
+              <Facebook className="text-green-800" size={20} />
             </a>
+
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
               className="w-14 h-14 bg-white bg-opacity-20 backdrop-blur rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all transform hover:scale-110"
             >
-              <span className="text-green-800 text-2xl font-bold"><InstagramIcon/></span>
+              <Instagram className="text-green-800" size={20} />
             </a>
+
             <a
               href="https://wa.me/250780162164"
               target="_blank"
@@ -434,22 +495,20 @@ const GetInvolved = () => {
               <Phone className="text-green-800" size={24} />
             </a>
           </div>
-          <p className="text-green-100 text-sm">
-            Use #ZandaInitiative to share your support
-          </p>
+
+          <p className="text-green-100 text-sm">Use #ZandaInitiative to share your support</p>
         </div>
       </section>
 
       {/* Contact CTA */}
       <section className="py-20 bg-gray-900 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Ready to Make a Difference?
-          </h2>
+          <h2 className="text-4xl font-bold mb-6">Ready to Make a Difference?</h2>
           <p className="text-xl mb-10 text-gray-300 leading-relaxed">
             Get in touch with us to discuss how you can contribute to our
             mission and transform lives.
           </p>
+
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
               href="mailto:info@zandainitiative.com"
@@ -462,6 +521,7 @@ const GetInvolved = () => {
                 className="ml-2 group-hover:translate-x-1 transition-transform"
               />
             </a>
+
             <a
               href="tel:+250780162164"
               className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-gray-900 transition-all inline-flex items-center justify-center"
@@ -478,10 +538,7 @@ const GetInvolved = () => {
         isOpen={isDonationModalOpen}
         onClose={() => setIsDonationModalOpen(false)}
       />
-      <VideoModal
-        video={selectedVideo}
-        onClose={() => setSelectedVideo(null)}
-      />
+      <VideoModal video={selectedVideo} onClose={() => setSelectedVideo(null)} />
     </div>
   );
 };
